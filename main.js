@@ -20,6 +20,9 @@ const app = Vue.createApp({
 				completed: false
 			});
 			this.newTodo = '';
-		}
+		},
+		removeTodo(key) {
+			this.todos.splice(key, 1);
+		 }
 	}
 })
