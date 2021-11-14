@@ -7,4 +7,19 @@ const app = Vue.createApp({
 			]
 		}
 	},
+	methods: {
+		addTodo() {
+			var value = this.newTodo.trim(); //trim為消除前後空白
+			var timeStamp = Math.floor(Date.now());
+			if (!value) {
+				return;
+			}
+			this.todos.push({
+				id: timeStamp,
+				title: value,
+				completed: false
+			});
+			this.newTodo = '';
+		}
+	}
 })
